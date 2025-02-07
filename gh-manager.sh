@@ -5,6 +5,13 @@
 
 set -euo pipefail # Robust error handling
 
+# Validar que haya al menos un argumento
+if [[ $# -eq 0 ]]; then
+  echo "❌ ERROR: No se proporcionaron argumentos."
+  echo "Uso: gh-manager <repo|issue|pr|keys|gists|user|status|events> <command> [options]"
+  exit 1
+fi
+
 BASE_URL="https://api.github.com"
 LOG_FILE="$HOME/.gh-manager.log"
 TOKEN="${GITHUB_TOKEN:-}"
