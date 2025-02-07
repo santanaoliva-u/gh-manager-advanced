@@ -53,7 +53,10 @@ You must also have a **GitHub Personal Access Token** with the necessary scopes:
 
 2. Make the script executable:
    ```bash
-   chmod +x gh-manager.sh
+   sudo su
+   chmod +x gh-manager.sh 
+   mv gh-manager.sh  /usr/local/bin/
+
    ```
 
 3. Optionally, add it to your PATH for easier access:
